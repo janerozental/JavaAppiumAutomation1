@@ -1,6 +1,6 @@
 import org.junit.Assert;
 import org.junit.Test;
-import static org.hamcrest.CoreMatchers.containsString;
+
 
 public class MainClassTest
 {
@@ -27,9 +27,11 @@ public class MainClassTest
     @Test
     public void testGetClassString()
     {
-        String x = Main.getClassString();
+        String classMsg = Main.getClassString();
+        String wordOne = "Hello";
+        String wordTwo = "hello";
 
-        Assert.assertTrue(x == ("Hello") || x ==("hello"));
+        Assert.assertTrue("Message doesn't contain requested words",classMsg.contains(wordOne) || classMsg.contains(wordTwo));
     }
 
 
